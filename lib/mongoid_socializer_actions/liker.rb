@@ -2,9 +2,9 @@ module Mongoid
   module Liker
     extend ActiveSupport::Concern
 
-    included do |base|
-      base.field    :likes_count, :type => Integer, :default => 0
-      base.has_many :likes, :class_name => 'Mongoid::Like', :inverse_of => :liker, :dependent => :destroy
+    included do
+      field    :likes_count, :type => Integer, :default => 0
+      has_many :likes, :class_name => 'Mongoid::Like', :inverse_of => :liker, :dependent => :destroy
     end
 
     # like a model

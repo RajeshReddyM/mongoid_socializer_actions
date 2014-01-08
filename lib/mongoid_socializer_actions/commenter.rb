@@ -2,9 +2,9 @@ module Mongoid
   module Commenter
     extend ActiveSupport::Concern
 
-    included do |base|
-      base.field    :comments_count, :type => Integer, :default => 0
-      base.has_many :comments, :class_name => 'Mongoid::Comment', :inverse_of => :commenter, :dependent => :destroy
+    included do
+      field    :comments_count, :type => Integer, :default => 0
+      has_many :comments, :class_name => 'Mongoid::Comment', :inverse_of => :commenter, :dependent => :destroy
     end
 
     # Comment on a model

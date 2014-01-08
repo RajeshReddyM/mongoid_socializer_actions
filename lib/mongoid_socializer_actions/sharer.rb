@@ -2,8 +2,8 @@ module Mongoid
   module Sharer
     extend ActiveSupport::Concern
 
-    included do |base|
-      base.has_many :shares, :class_name => 'Mongoid::Share', :inverse_of => :sharer, :dependent => :destroy
+    included do
+      has_many :shares, :class_name => 'Mongoid::Share', :inverse_of => :sharer, :dependent => :destroy
     end
 
     # share a model

@@ -2,9 +2,9 @@ module Mongoid
   module Sharable
     extend ActiveSupport::Concern
 
-    included do |base|
-      base.field    :shares_count, :type => Integer, :default => 0
-      base.has_many :shares, :class_name => 'Mongoid::Share', :as => :sharable, :dependent => :destroy
+    included do
+      field    :shares_count, :type => Integer, :default => 0
+      has_many :shares, :class_name => 'Mongoid::Share', :as => :sharable, :dependent => :destroy
     end
 
     def sharers

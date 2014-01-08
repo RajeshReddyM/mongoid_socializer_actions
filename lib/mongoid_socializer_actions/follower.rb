@@ -2,9 +2,9 @@ module Mongoid
   module Follower
     extend ActiveSupport::Concern
 
-    included do |base|
-      base.field    :follows_count, :type => Integer, :default => 0
-      base.has_many :follows, :class_name => 'Mongoid::Follow', :inverse_of => :follower, :dependent => :destroy
+    included do
+      field    :follows_count, :type => Integer, :default => 0
+      has_many :follows, :class_name => 'Mongoid::Follow', :inverse_of => :follower, :dependent => :destroy
     end
 
     # follow a model
