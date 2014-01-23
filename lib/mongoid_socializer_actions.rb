@@ -1,3 +1,4 @@
+require 'mongoid_socializer_actions/version'
 require 'mongoid_socializer_actions/config'
 module Socializer
   extend Configuration
